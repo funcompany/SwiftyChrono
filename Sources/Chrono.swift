@@ -13,6 +13,7 @@ public enum OptionType: String { case
     afternoon = "afternoon",
     evening = "evening",
     noon = "noon",
+    night = "night",
     forwardDate = "forwardDate"
 }
 
