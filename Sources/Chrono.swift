@@ -17,6 +17,11 @@ public enum OptionType: String { case
     forwardDate = "forwardDate"
 }
 
+public enum WeekdayParseType { case
+    closest,
+    future
+}
+
 @objc public class Chrono: NSObject {
     /// iOS's Calender.Component to date that has 6 minutes less if the date is before 1900 (compared to JavaScript or Java)
     /// If your use case will include both be ealier than 1900 and its minutes, seconds, nanoseconds, (milliseconds)
@@ -37,6 +42,8 @@ public enum OptionType: String { case
     public static var defaultImpliedSecond: Int = 0
     /// you can set default imply millisecond
     public static var defaultImpliedMillisecond: Int = 0
+    /// Find weekday as closest or future only
+    public static var weekdayParseType: WeekdayParseType = .future
 
     let modeOption: ModeOptio
     var parsers: [Parser] { return modeOption.parsers }

@@ -39,7 +39,7 @@ public func updateParsedComponent(result: ParsedResult, ref: Date, offset: Int, 
     } else if modifier == "this" {
         weekday = offset
     } else {
-        if abs(offset - 7 - refOffset) < abs(offset - refOffset) {
+        if abs(offset - 7 - refOffset) < abs(offset - refOffset), Chrono.weekdayParseType == .closest {
             weekday = offset - 7
         } else if abs(offset + 7 - refOffset) < abs(offset - refOffset) {
             weekday = offset + 7
